@@ -65,7 +65,7 @@ This template demonstrates a streamlined implementation of the X402 payment prot
 
 ```bash
 # Clone or create from template
-npx create-solana-dapp my-app --template Hasti
+npx create-solana-dapp my-app --template asti
 
 # Navigate to project
 cd my-app
@@ -164,7 +164,7 @@ export const config = {
 ## Project Structure
 
 ```
-Hasti/
+asti/
 ├── middleware.ts              # 🛡️  X402 payment middleware configuration
 ├── app/
 │   ├── page.tsx              # 🏠 Homepage with links to protected content
@@ -368,3 +368,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 **Built with ❤️ from [Kronos](https://www.kronos.build/)**
+#   a s t i  
+ 
