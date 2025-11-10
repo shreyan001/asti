@@ -1,5 +1,5 @@
 {
-  "name": "Hasti",
+  "name": "asti",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
