@@ -2,10 +2,15 @@ import { Address } from 'viem'
 import { paymentMiddleware, Resource, Network } from 'x402-next'
 import { NextRequest } from 'next/server'
 
-const address = process.env.NEXT_PUBLIC_RECEIVER_ADDRESS as Address
-const network = process.env.NEXT_PUBLIC_NETWORK as Network
-const facilitatorUrl = process.env.NEXT_PUBLIC_FACILITATOR_URL as Resource
-const cdpClientKey = process.env.NEXT_PUBLIC_CDP_CLIENT_KEY as string
+const address = (process.env.NEXT_PUBLIC_WALLET_ADDRESS || 'CmGgLQL36Y9ubtTsy2zmE46TAxwCBm66onZmPPhUWNqv') as Address
+const rawNetwork = process.env.NEXT_PUBLIC_NETWORK || ''
+const network = (
+  ['solana-devnet', 'solana-mainnet-beta', 'solana-testnet'].includes(rawNetwork)
+    ? rawNetwork
+    : 'solana-devnet'
+) as Network
+const facilitatorUrl = (process.env.NEXT_PUBLIC_FACILITATOR_URL || 'https://x402.org/facilitator') as Resource
+const cdpClientKey = process.env.NEXT_PUBLIC_CDP_CLIENT_KEY || '3uyu43EHCwgVIQx6a8cIfSkxp6cXgU30'
 
 const x402PaymentMiddleware = paymentMiddleware(
   address,
